@@ -1,0 +1,50 @@
+.account__info {
+    margin: 10px;
+    border: 0px solid rgb(54, 54, 54);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px -9px rgb(0, 0, 0, 0.75);
+    height: 800px;
+}
+
+.account__info > h1 {
+    padding: 10px;
+}
+
+.img__tool {
+    height: 5%;
+    width: 5%;
+    margin-top: 0;
+    margin-left: 350px;
+    
+}
+
+.account__info > input {
+    padding:10px;
+    height: 20px;
+    width: 250px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: inherit;
+    margin-top: 0px;
+}
+
+.account__info > button {
+    height:50px;
+    width: 100px;
+    background-color: rgb(226, 53, 9);
+    color: white;
+    border: 3px solid peachpuff;
+    border-radius: 999px;
+}
+
+.account__info > button:hover {
+    height:50px;
+    width: 100px;
+    background-color: white;
+    color: rgb(226, 53, 9);
+    border: 3px solid peachpuff;
+    border-radius: 999px;
+}
+

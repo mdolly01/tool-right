@@ -1,0 +1,45 @@
+.banner {
+    background: url("https://www.l2rental.com/files/l2-home-garden-tool-rental-s2.jpg") center center;
+    height:  60vh;
+    position: relative;
+    margin-top: 20px;
+}
+
+.banner__info {
+    background-color: black;
+    color: white;
+    padding-top: 20vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    width: 300px;
+}
+
+.banner__search {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__searchButton {
+    background-color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    color: rgb(247, 44, 8) !important;
+}
+
+.banner__info > button {
+    background-color: rgb(247, 44, 8);
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.banner__info > button:hover {
+    background-color: white;
+    color: rgb(247, 44, 8);
+}
+
+.banner__info > h5 {
+    margin-top: 10px;
+}
