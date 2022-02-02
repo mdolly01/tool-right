@@ -2,10 +2,8 @@
   "homepage": "https://mdolly01.github.io/toolright",
   "name": "tool-right",
   "version": "0.1.0",
-  "type": "module",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.16.5",
     "@babel/node": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@emotion/react": "^11.5.0",
@@ -16,11 +14,14 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
+    "cross-env": "^7.0.3",
     "date-fns": "^2.25.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^4.2.2",
+    "mongodb": "^4.3.1",
+    "node-fetch": "^2.6.7",
+    "nodemodule": "^0.3.0",
     "react": "^17.0.2",
     "react-date-range": "^1.4.0",
     "react-dom": "^17.0.2",
@@ -35,7 +36,7 @@
     "start:dev": "webpack serve",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dev": "nodemon --exec babel-node ../backend/src/server.js",
+    "dev": "nodemon --exec babel-node -r ./src/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.16.12",
     "gh-pages": "^3.2.3",
     "nodemon": "^2.0.15",
     "webpack-cli": "^4.9.1",
