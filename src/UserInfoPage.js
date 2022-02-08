@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { axios } from 'axios';
-import { useToken } from '../auth/useToken';
-import { useUser } from '../auth/useUser';
+import axios from 'axios';
+import { useToken } from './useToken1';
+import { useUser } from './useUser1';
 
 export const UserInfoPage = () => {
     const user = useUser();
@@ -57,7 +57,7 @@ export const UserInfoPage = () => {
 
     const logOut = () => {
         localStorage.removeItem('token');
-        history.push('/login');
+        history.push('/login');                                                                                                                                                
     }
     
     const resetValues = () => {
@@ -66,7 +66,7 @@ export const UserInfoPage = () => {
         setBio(info.bio);
     }
     
-    // And here we have the JSX for our component. It's pretty straightforward
+    
     return (
         <div className="content-container">
             <h1>Info for {email}</h1>

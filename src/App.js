@@ -10,7 +10,10 @@ import { LogInPage } from './LogInPage';
 import { SignUpPage } from './SignUpPage';
 import { PrivateRoute } from './auth/PrivateRoute';
 import { UserInfoPage } from './UserInfoPage';
-
+import { PleaseVerifyEmailPage } from './PleaseVerifyEmailPage'
+import { EmailVerificationLandingPage } from './EmailVerificationLandingPage';
+import { ForgotPasswordPage } from './ForgotPasswordPage';
+import { PasswordResetLandingPage } from './PasswordResetLandingPage';
 
 function App() {
   return (
@@ -25,8 +28,20 @@ function App() {
           <PrivateRoute path="/" exact>
             <UserInfoPage />
           </PrivateRoute>
+          <Route path="/verify-email/:verificationString">
+            <EmailVerificationLandingPage />
+          </Route>
+          <Route path="/forgot-password">
+            <ForgotPasswordPage />
+          </Route>
           <Route path="/login">
             <LogInPage />
+          </Route>
+          <Route path='/reset-password/:passwordReset'>
+            <PasswordResetLandingPage />
+          </Route>
+          <Route path="/please-verify">
+            <PleaseVerifyEmailPage />
           </Route>
           <Route path="/signup">
             <SignUpPage />

@@ -2,10 +2,10 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { v4 as uuid } from 'uuid';
 import { getDbConnection } from '../src/db';
-import { sendEmail } from '../util/sendEmail';
+import { sendEmail } from '../src/util/sendEmail';
 
 export const signUpRoute = {
-    path: '/api/signup',
+     
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;

@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { sendEmail } from '../util/sendEmail';
-import { getDbConnection } from '../db';
+import { getDbConnection } from '../src/db';
 
 export const forgotPasswordRoute = {
     path: '/api/forgot-password/:email',
@@ -18,7 +18,7 @@ export const forgotPasswordRoute = {
             try {
                 await sendEmail({
                     to: email,
-                    from: 'shaun.p.wassel@gmail.com',
+                    from: 'toolrightcustomerservice@gmail.com',
                     subject: 'Password Reset',
                     text: `
                         Uh oh, looks like you forgot your password... no worries, it happens!
