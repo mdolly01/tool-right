@@ -13,6 +13,7 @@ export const googleOauthCallbackRoute = {
         const { _id: id, isVerified, email, info } = updatedUser;
         
         jwt.sign({ id, isVerified, email, info }, process.env.JWT_SECRET, (err, token) => {
+            if (err) return res.sendStatus(500);
             res.redirect(`http://localhost:3000/login?token=${token}`);
         });
     },
