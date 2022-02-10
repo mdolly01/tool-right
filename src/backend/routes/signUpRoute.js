@@ -5,7 +5,7 @@ import { getDbConnection } from '../src/db';
 import { sendEmail } from '../src/util/sendEmail';
 
 export const signUpRoute = {
-     
+    path: '/api/signup', 
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;
