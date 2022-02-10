@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <div className='header'>
-            <Link to='/'>
+            <Link to='/index'>
                 <img
                     className="header__icon"
                     src={logo}

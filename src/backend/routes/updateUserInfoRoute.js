@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { ObjectId } from 'mongodb';
-import { getDbConnection } from '../db';
+import { getDbConnection } from '../src/db';
 
 export const updateUserInfoRoute = {
     path: '/api/users/:userId',

@@ -57,7 +57,7 @@ function App() {
           <SearchPage />
           </Route>
 
-          <Route path="/">
+          <Route path="/index">
             <Home />
           </Route>
 

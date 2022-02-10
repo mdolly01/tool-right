@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { sendEmail } from '../util/sendEmail';
+import { sendEmail } from '../src/util/sendEmail';
 import { getDbConnection } from '../src/db';
 
 export const forgotPasswordRoute = {

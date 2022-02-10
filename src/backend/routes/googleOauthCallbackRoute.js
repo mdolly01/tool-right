@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { getGoogleUser } from '../util/getGoogleUser';
+import { getGoogleUser } from '../src/util/getGoogleUser';
 import { updateOrCreateUserFromOauth } from '../src/util/updateOrCreateUserFromOauth';
 
 export const googleOauthCallbackRoute = {
