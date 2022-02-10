@@ -4,7 +4,9 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useToken } from './useToken1';
 import { useQueryParams } from './useQueryParams';
-import { googleOauthUrl } from 'googleapis';
+import AccountPic from './account-page-picture.jpg';
+// import { googleOauthUrl } from 'googleapis';
+import './LogInPage.css';
 
 export const LogInPage = () => {
     const [, setToken] = useToken();
@@ -50,19 +52,21 @@ export const LogInPage = () => {
     }
 
     return (
-        <div classNAme="content-container">
+        <div className="content-container">
+            <img src={AccountPic} style={{height: 350, width:600}}/>
             <h1>Log In</h1>
             {errorMessage && <div className='fail'>{setErrorMessage}</div>}
-            <input 
+            <input style={{height: 30, width:300}}
                 value={emailValue}
                 onChange={event => setEmailValue(event.target.value)}
                 placeholder="someone@gmail.com"
                 ></input>
-            <input 
+
+            <input style={{height: 30, width:300}}
                 type="password"
                 value={passwordValue} 
                 onChange={event => setPasswordValue(event.target.value)}
-                placeholder="password"></input>
+                placeholder="password"></input><p><br></br></p>
                 <hr></hr>
             <button 
                 disabled={!emailValue || !passwordValue}
@@ -70,10 +74,11 @@ export const LogInPage = () => {
             <button onClick={() => history.push('/forgotpassword')}>Forgot your password?</button>
             <button onClick={() => history.push('/account')}>Sign Up!</button>
             <button
-                disabled={!googleOauthUrl}
-                onClick={() => { window.location.href = googleOauthUrl}}
-            >Log in with Google</button>
+                // onClick={() => { window.location.href = googleOauthUrl}}
+                // disabled={!googleOauthUrl}
+            >Log in with Google</button><p><br></br><br></br><br></br><br></br></p>
         </div>
+        
 
     );
 }

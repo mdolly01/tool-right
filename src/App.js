@@ -57,7 +57,7 @@ function App() {
           <SearchPage />
           </Route>
 
-          <Route path="/index">
+          <Route path="/toolright">
             <Home />
           </Route>
 

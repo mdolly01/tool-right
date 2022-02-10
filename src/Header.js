@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <div className='header'>
-            <Link to='/index'>
+            <Link to='/toolright'>
                 <img
                     className="header__icon"
                     src={logo}
@@ -19,7 +19,9 @@ function Header() {
             </Link>
         <div className='header__center'>
             <input type="text" />
+            <Link to='/search'>
             <SearchIcon />
+            </Link>
         </div>
         <div className='header__right'>
             <Link to='/tooltycoon'>
@@ -27,7 +29,7 @@ function Header() {
             </Link>
             <LanguageIcon />
             <ExpandMoreIcon />
-            <Link to='/account'>
+            <Link to='/login'>
             <AccountCircleIcon />
             </Link>
         </div>
