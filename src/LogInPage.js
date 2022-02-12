@@ -9,13 +9,13 @@ import AccountPic from './account-page-picture.jpg';
 import './LogInPage.css';
 
 export const LogInPage = () => {
-    const [, setToken] = useToken();
+    const [token, setToken] = useToken();
     const [errorMessage, setErrorMessage] = useState('');
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
 
-    const [getGoogleOauthUrl, setGoogleOauthUrl] = useState('');
+    const [,setGoogleOauthUrl] = useState('');
     const { token: oauthToken } = useQueryParams();
 
     const history = useHistory();
@@ -27,33 +27,39 @@ export const LogInPage = () => {
         }
     }, [oauthToken, setToken, history]);
 
-    useEffect(() =>{
-        const loadOauthUrl = async () => {
-            try{
-                const response = await axios.get('/auth/google/url');
-                const { url } = response.data;
-                setGoogleOauthUrl(url);
-            } catch (e) {
-                console.log(e);
-            }
+    // useEffect(() =>{
+    //     const loadOauthUrl = async () => {
+    //         try{
+    //             const response = await axios.get('/auth/google/url');
+    //             const { url } = response.data;
+    //             setGoogleOauthUrl(url);
+    //         } catch (e) {
+    //             console.log(e);
+    //         }
+    //     }
+
+    //     loadOauthUrl();
+    // },[])
+
+const onLogInClicked = async () => {
+        try {
+            const response = await axios.post('/api/login', {
+                email: emailValue,
+                password: passwordValue,
+            });
+            const { token } = response.data;
+            setToken(token);
+            console.log(token);
+            history.push('/');
+        } catch (e) {
+            console.log(e);
+            setErrorMessage(e.message);
         }
-
-        loadOauthUrl();
-    },[])
-
-    const onLogInClicked = async () => {
-        const response = await axios.post('/api/login', {
-            email: emailValue,
-            password: passwordValue,
-        });
-        const { token } = response.data;
-        setToken(token);
-        history.push('/userInfoPage');
     }
 
     return (
         <div className="content-container">
-            <img src={AccountPic} style={{height: 350, width:600}}/>
+            <img src={AccountPic} style={{height: 350, width:600}} alt='Account'/>
             <h1>Log In</h1>
             {errorMessage && <div className='fail'>{setErrorMessage}</div>}
             <input style={{height: 30, width:300}}

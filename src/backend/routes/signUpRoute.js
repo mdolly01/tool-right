@@ -15,7 +15,8 @@ export const signUpRoute = {
         const user = await db.collection('users').findOne({ email });
 
         if (user) {
-            return res.sendStatus(409); // 409 is the "conflict" error code
+            console.log("found user", user)
+            return res.sendStatus(409).json(user); // 409 is the "conflict" error code
         }
 
         // Generate the salt first
@@ -44,20 +45,20 @@ export const signUpRoute = {
         });
         const { insertedId } = result;
 
-        try {
-            await sendEmail({
-                to: email,
-                from: 'mdolly01@gmail.com',
-                subject: 'Please verify your email',
-                text: `
-                    Thanks for signing up! To verify your email, you just need to click the link below:
-                    http://localhost:3000/verify-email/${verificationString}
-                `
-            });
-        } catch (e) {
-            console.log(e);
-            throw new Error(e);
-        }
+        // try {
+        //     await sendEmail({
+        //         to: email,
+        //         from: 'mdolly01@gmail.com',
+        //         subject: 'Please verify your email',
+        //         text: `
+        //             Thanks for signing up! To verify your email, you just need to click the link below:
+        //             http://localhost:3000/verify-email/${verificationString}
+        //         `
+        //     });
+        // } catch (e) {
+        //     console.log(e);
+        //     throw new Error(e);
+        // }
 
         jwt.sign({
             id: insertedId,
@@ -73,7 +74,7 @@ export const signUpRoute = {
             if (err) {
                 return res.status(500).send(err);
             }
-            return res.status(200).send({ token });
+            return res.status(200).json({token});
         });
     },
 };

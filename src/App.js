@@ -25,7 +25,7 @@ function App() {
         <Header />
         
         <Switch>
-          <PrivateRoute path="/" exact>
+          <PrivateRoute path="/UserInfoPage" exact>
             <UserInfoPage />
           </PrivateRoute>
           <Route path="/verify-email/:verificationString">

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useToken } from './useToken1';
 import { useUser } from './useUser1';
+import blankUser from './blankuser.png'
 
 export const UserInfoPage = () => {
     const user = useUser();
@@ -69,28 +70,32 @@ export const UserInfoPage = () => {
     
     return (
         <div className="content-container">
-            <h1>Info for {email}</h1>
-            {!isVerified && <div className="fail">You won't be able to make any changes until you verify your email</div>}
+            <h1>Info for {email}</h1><p>{<br></br>}</p>
+            <img src={blankUser} style={{height: 250, width:250}} alt='Blank User'/><p>{<br></br>}</p>
+            {!isVerified && <div className="fail">You won't be able to make any changes until you verify your email</div>}<p>{<br></br>}</p>
             {showSuccessMessage && <div className="success">Successfully saved user data!</div>}
             {showErrorMessage && <div className="fail">Uh oh... something went wrong and we couldn't save changes</div>}
             <label>
-                Favorite Food:
+                First Name :&nbsp;&nbsp;
                 <input
                     onChange={e => setFavoriteFood(e.target.value)}
                     value={favoriteFood} />
             </label>
+            <p>{<br></br>}</p>
             <label>
-                Hair Color:
+                Last Name :&nbsp;&nbsp;
                 <input
                     onChange={e => setHairColor(e.target.value)}
                     value={hairColor} />
             </label>
+            <p>{<br></br>}</p>
             <label>
-                Bio:
+                Date of Birth :&nbsp;&nbsp;
                 <input
                     onChange={e => setBio(e.target.value)}
                     value={bio} />
             </label>
+            <p>{<br></br>}</p>
             <hr />
             <button
                 disabled={!isVerified}
@@ -98,6 +103,8 @@ export const UserInfoPage = () => {
             >Save Changes</button>
             <button onClick={resetValues}>Reset Values</button>
             <button onClick={logOut}>Log Out</button>
+            <p>{<br></br>}</p>
+            <p>{<br></br>}</p>
         </div>
     );
 }
