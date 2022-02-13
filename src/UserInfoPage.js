@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useToken } from './useToken1';
 import { useUser } from './useUser1';
-import blankUser from './blankuser.png'
+import UploadPicture from './uploadPicture';
 
 export const UserInfoPage = () => {
     const user = useUser();
@@ -71,7 +71,7 @@ export const UserInfoPage = () => {
     return (
         <div className="content-container">
             <h1>Info for {email}</h1><p>{<br></br>}</p>
-            <img src={blankUser} style={{height: 250, width:250}} alt='Blank User'/><p>{<br></br>}</p>
+            <UploadPicture />
             {!isVerified && <div className="fail">You won't be able to make any changes until you verify your email</div>}<p>{<br></br>}</p>
             {showSuccessMessage && <div className="success">Successfully saved user data!</div>}
             {showErrorMessage && <div className="fail">Uh oh... something went wrong and we couldn't save changes</div>}
@@ -108,3 +108,4 @@ export const UserInfoPage = () => {
         </div>
     );
 }
+
