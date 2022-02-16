@@ -78,7 +78,7 @@ const onLogInClicked = async () => {
                 disabled={!emailValue || !passwordValue}
                 onClick={onLogInClicked}>Log In</button>
             <button onClick={() => history.push('/forgotpassword')}>Forgot your password?</button>
-            <button onClick={() => history.push('/account')}>Sign Up!</button>
+            <button onClick={() => history.push('/signup')}>Sign Up!</button>
             <button
                 // onClick={() => { window.location.href = googleOauthUrl}}
                 // disabled={!googleOauthUrl}

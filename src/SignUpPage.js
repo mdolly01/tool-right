@@ -54,6 +54,7 @@ export const SignUpPage = () => {
     return (
         <div classNAme="content-container">
             <h1>Sign Up</h1>
+            <p><br></br></p>
             {errorMessage && <div className='fail'>{setErrorMessage}</div>}
             <input 
                 value={emailValue}
@@ -75,7 +76,8 @@ export const SignUpPage = () => {
                 disabled={!emailValue || !passwordValue || passwordValue !== confirmPasswordValue }
                 onClick={onSignUpClicked}>Sign Up!</button>
                 <button onClick={() => history.push('/login')}>Already have an account? Log In</button>
-                <h3>{token}</h3>
+                <p><br></br></p>
+                {/* <h3>{token}</h3> */}
         </div>
 
     );
